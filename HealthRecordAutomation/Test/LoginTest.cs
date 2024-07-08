@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using KPMG.HealthRecordAutomation.Base;
 using KPMG.HealthRecordAutomation.Utilities;
+using KPMG.HealthRecordAutomation.Pages;
+using HealthRecordAutomation.Pages;
 
 namespace KPMG.HealthRecordAutomation.Test
 {
@@ -19,11 +21,15 @@ namespace KPMG.HealthRecordAutomation.Test
         //[TestCase("physician", "physician", "OpenEMR")]
         public void ValidLoginTest(string username, string password, string expectedTitle)
         {
-            driver.FindElement(By.Id("authUser")).SendKeys(username);
-            driver.FindElement(By.Id("clearPass")).SendKeys(password);
-            driver.FindElement(By.Id("login-button")).Click();
+            LoginPage loginPage = new LoginPage(driver);
+            loginPage.EnterUsername(username);
+            loginPage.EnterPassword(password);
+            loginPage.ClickOnLogin();
 
-            string actualTitle = driver.Title;
+            //move the GetMainPageTitle() to MainPage class
+            MainPage mainPage = new MainPage(driver);
+            string actualTitle = mainPage.GetMainPageTitle();
+
             Assert.That(actualTitle, Is.EqualTo(expectedTitle));
         }
 
@@ -31,12 +37,14 @@ namespace KPMG.HealthRecordAutomation.Test
         [TestCaseSource(typeof(DataSource),nameof(DataSource.InvalidLoginData))]
         public void InvalidLoginTest(string username,string password,string expectedError)
         {
-            driver.FindElement(By.Id("authUser")).SendKeys(username);
-            driver.FindElement(By.Id("clearPass")).SendKeys(password);
-            driver.FindElement(By.Id("login-button")).Click();
+            LoginPage loginPage = new LoginPage(driver);
+            loginPage.EnterUsername(username);
+            loginPage.EnterPassword(password);
+            loginPage.ClickOnLogin();
 
             //Assert - Invalid username or password 
-            string actualError = driver.FindElement(By.XPath("//p[contains(text(),'Invalid')]")).Text;
+            string actualError = loginPage.GetInvalidErrorMessage();
+
             Assert.That(actualError, Is.EqualTo(expectedError));
         }
 
