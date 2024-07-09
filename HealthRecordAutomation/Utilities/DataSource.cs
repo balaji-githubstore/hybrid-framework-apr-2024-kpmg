@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kPMG.HealthRecordAutomation.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,13 @@ namespace KPMG.HealthRecordAutomation.Utilities
 {
     public class DataSource
     {
+
+        public static object[] ValidLoginDataExcel()
+        {
+            object[] allData=ExcelUtils.GetSheetIntoObjectArray("C:\\Automation Session\\AutomationFrameworkSolution\\HealthRecordAutomation\\TestData\\open_emr_data.xlsx", "validLoginTest");
+            return allData;
+        }
+
         public static object[] ValidLoginData()
         {
             object[] dataSet1 = new object[3];

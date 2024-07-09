@@ -102,3 +102,11 @@ C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\obj\Deb
 C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\obj\Debug\net8.0\HealthRecordAutomation.pdb
 C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\obj\Debug\net8.0\HealthRecordAutomation.genruntimeconfig.cache
 C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\obj\Debug\net8.0\ref\HealthRecordAutomation.dll
+C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\obj\Debug\net8.0\HealthRecordAutomation.sourcelink.json
+C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\bin\Debug\net8.0\ClosedXML.dll
+C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\bin\Debug\net8.0\ExcelNumberFormat.dll
+C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\bin\Debug\net8.0\Irony.dll
+C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\bin\Debug\net8.0\SixLabors.Fonts.dll
+C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\bin\Debug\net8.0\System.IO.Packaging.dll
+C:\Automation Session\AutomationFrameworkSolution\HealthRecordAutomation\bin\Debug\net8.0\XLParser.dll

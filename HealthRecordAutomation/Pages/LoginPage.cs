@@ -18,7 +18,7 @@ namespace KPMG.HealthRecordAutomation.Pages
 
         public void EnterUsername(string username)
         {
-            driver.FindElement(By.Id("authUser")).SendKeys(username);
+            driver.FindElement(By.XPath("//input[@name='authUser']")).SendKeys(username);
         }
        
         public void EnterPassword(string password)

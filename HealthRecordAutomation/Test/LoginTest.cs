@@ -16,7 +16,7 @@ namespace KPMG.HealthRecordAutomation.Test
     {
 
         [Test]
-        [TestCaseSource(typeof(DataSource),nameof(DataSource.ValidLoginData))]
+        [TestCaseSource(typeof(DataSource),nameof(DataSource.ValidLoginDataExcel))]
         //[TestCase("admin","pass","OpenEMR")]
         //[TestCase("physician", "physician", "OpenEMR")]
         public void ValidLoginTest(string username, string password, string expectedTitle)
@@ -43,9 +43,9 @@ namespace KPMG.HealthRecordAutomation.Test
             loginPage.ClickOnLogin();
 
             //Assert - Invalid username or password 
-            string actualError = loginPage.GetInvalidErrorMessage();
+            //string actualError = loginPage.GetInvalidErrorMessage();
 
-            Assert.That(actualError, Is.EqualTo(expectedError));
+            Assert.That(loginPage.GetInvalidErrorMessage(), Is.EqualTo(expectedError));
         }
 
     }
